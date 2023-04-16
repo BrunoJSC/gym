@@ -1,4 +1,4 @@
-import { SelectedPage } from "@/@types/type";
+import { ClassTypes, SelectedPage } from "@/@types/type";
 
 import {motion} from "framer-motion";
 
@@ -9,14 +9,13 @@ import image4 from "@/assets/image4.png";
 import image5 from "@/assets/image5.png";
 import image6 from "@/assets/image6.png";
 import { HText } from "@/components/HText";
-import { ClassType } from "react";
 import { Class } from "./Class";
 
 interface OurClassProps {
   setSelectedPage: (page: SelectedPage) => void;
 }
 
-const classes: Array<ClassType> = [
+const classes: Array<ClassTypes> = [
   {
     name: "Weight Training Classes",
     description:
@@ -80,7 +79,7 @@ export function OurClass({ setSelectedPage }: OurClassProps) {
       </motion.div>
       <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
         <ul className="w-[2800px] whitespace-nowrap">
-          {classes.map((item: ClassType, index) => (
+          {classes.map((item: ClassTypes, index) => (
             <Class
               key={`${item.name}-${index}`}
               name={item.name}
